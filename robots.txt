@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://hebez7.github.io/hebez-store/sitemap.xml
