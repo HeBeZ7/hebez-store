@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>HeBeZ 스토어 | Baekho 7 Tee</title>
 
-  <!-- Favicon & 공유 썸네일 -->
+  <!-- 파비콘/OG -->
   <link rel="icon" href="hebez-shield.svg">
   <meta property="og:title" content="HeBeZ Baekho 7 Tee" />
   <meta property="og:description" content="탄탄한 핏과 부드러운 착용감의 시그니처 티셔츠" />
-  <meta property="og:image" content="tee-cream.svg" />
-  <meta name="description" content="무통장 입금 + 배송지 폼으로 주문 접수. 카카오페이 송금 링크 지원.">
+  <meta property="og:image" content="tee-cream.jpg" />
+  <meta name="description" content="무통장 입금 + 배송지 폼 주문. 카카오페이 송금 링크 지원.">
 
   <link rel="stylesheet" href="style.css">
 </head>
@@ -30,14 +30,19 @@
       <!-- 좌측: 제품 미리보기 -->
       <section class="card">
         <div class="hero">
-          <img id="hero" src="tee-cream.svg" alt="HeBeZ Tee" style="max-width:92%;height:auto;">
+          <!-- 💡 여기는 실제 사진 파일(tee-cream.jpg)이 필요합니다 -->
+          <img id="hero" src="tee-cream.jpg" alt="HeBeZ Tee" style="max-width:92%;height:auto;">
         </div>
         <div class="thumbs">
-          <button class="active" data-img="tee-cream.svg" aria-label="화이트 프리뷰">
-            <img src="tee-cream.svg" alt="cream" style="width:100%;height:auto;">
+          <button class="active" data-img="tee-cream.jpg" aria-label="화이트 정면">
+            <img src="tee-cream.jpg" alt="white" style="width:100%;height:auto;">
           </button>
-          <button data-img="tee-black.svg" aria-label="블랙 프리뷰">
-            <img src="tee-black.svg" alt="black" style="width:100%;height:auto;">
+          <button data-img="tee-black.jpg" aria-label="블랙 정면">
+            <img src="tee-black.jpg" alt="black" style="width:100%;height:auto;">
+          </button>
+          <!-- 선택: 등판 썸네일 -->
+          <button data-img="tee-back-black.jpg" aria-label="블랙 등판">
+            <img src="tee-back-black.jpg" alt="back black" style="width:100%;height:auto;">
           </button>
         </div>
       </section>
@@ -49,12 +54,12 @@
         <p class="muted">귀여운 백호 7과 원형 레터링이 만난 HeBeZ 시그니처. 원가슴 방패 로고 포인트.</p>
 
         <div class="price">
-          <div class="now" id="priceNow" data-amount="29900">₩25,000</div>
-          <div class="line">₩35,000</div>
+          <div class="now" id="priceNow" data-amount="25000">₩25,000</div>
+          <div class="line">₩35,900</div>
         </div>
 
         <div class="swatches" role="tablist" aria-label="컬러">
-          <button class="active swatch swatch--cream" data-color="cream" title="크림" aria-selected="true"></button>
+          <button class="active swatch swatch--cream" data-color="cream" title="화이트" aria-selected="true"></button>
           <button class="swatch swatch--black" data-color="black" title="블랙" aria-selected="false"></button>
         </div>
 
@@ -69,22 +74,23 @@
         </div>
 
         <div style="display:flex;gap:10px;margin-top:16px;flex-wrap:wrap">
-          <button id="pay" class="btn ghost">무통장 입금 주문</button>
-          <button id="pay" class="btn ghost"
-            data-kakao="https://qr.kakaopay.com/FbW0aGBml30d408019">카드로 결제(카카오)</button>
-        </div>
+          <!-- 무통장 주문(모달 열림) -->
+          <button id="order" class="btn primary">무통장 입금 주문</button>
 
-        <div class="tabs">
-          <div class="tab active">상세</div>
-          <div class="tab">세탁/소재</div>
-          <div class="tab">교환/환불</div>
+          <!-- ✅ 카카오페이: 바로 새 탭으로 열림 -->
+          <!-- ⬇⬇⬇ 여기의 href 값을 본인 송금 링크로 교체 -->
+          <a id="kakaoPayLink" class="btn ghost"
+             href="https://qr.kakaopay.com/여기에_본인_송금링크"
+             target="_blank" rel="noopener">
+            카카오페이로 결제
+          </a>
         </div>
 
         <div class="section" style="margin-top:12px;">
           <ul>
             <li>원형 레터링 “WE ARE 26” + 백호(등번호 7) / 방패형 HeBeZ 로고(일가슴)</li>
             <li>컬러: 화이트, 블랙</li>
-            <li>원단: 20수 코튼 또는 기능성 폴리(흡습속건)</li>
+            <li>원단: 20수 또는 기능성 폴리(흡한속건)</li>
             <li>프린팅: DTG </li>
             <li>핏: 데일리 레귤러</li>
           </ul>
@@ -111,6 +117,7 @@
         <h3>입금 계좌</h3>
         <div class="bank__box">
           <div>
+            <!-- ⬇⬇⬇ 여기 3곳을 본인 정보로 교체 -->
             <div><strong>은행</strong> NH농협</div>
             <div><strong>예금주</strong> 이영석</div>
             <div><strong>계좌번호</strong> <span id="acct">352-8512-1593-53</span></div>
@@ -128,6 +135,9 @@
         <div class="formgrid">
           <label>주문자명
             <input name="name" required placeholder="홍길동">
+          </label>
+          <label>이메일(선택)
+            <input type="email" name="email" placeholder="you@example.com">
           </label>
           <label>연락처
             <input name="phone" required inputmode="tel" placeholder="010-0000-0000">
@@ -147,7 +157,7 @@
         <div class="formgrid">
           <label>색상
             <select name="color">
-              <option value="cream">화이트</option>
+              <option value="white">화이트</option>
               <option value="black">블랙</option>
             </select>
           </label>
@@ -166,7 +176,7 @@
         </div>
 
         <div class="info">
-          <p class="muted">• 폼 제출 후 <b>24시간 이내 입금</b> 부탁드립니다. 입금 확인 후 발송됩니다.<br>
+          <p class="muted">• 폼 제출 후 <b>24시간 내 입금</b> 부탁드립니다. 입금 확인 후 발송됩니다.<br>
           • 제출 정보는 주문 처리 외 목적으로 사용하지 않습니다.</p>
         </div>
 
@@ -178,28 +188,13 @@
         <!-- 전송용 메타 -->
         <input type="hidden" name="product" value="Baekho 7 Tee">
         <input type="hidden" name="page" value="hebez-store">
-        <input type="hidden" name="price" id="priceHidden" value="29900">
+        <input type="hidden" name="price" id="priceHidden" value="25000">
       </form>
 
       <div id="orderToast" class="toast" role="status" aria-live="polite" hidden></div>
     </div>
   </div>
 
-  <!-- 카드 결제(송금 링크) 모달 -->
-  <div id="payModal" class="modal" aria-hidden="true">
-    <div class="modal__backdrop" data-close></div>
-    <div class="modal__panel" role="dialog" aria-modal="true" aria-labelledby="payTitle">
-      <button class="modal__close" data-close aria-label="닫기">×</button>
-      <h2 id="payTitle">카드 결제(카카오)</h2>
-      <p class="muted">휴대폰에 등록된 카드로 각 결제앱에서 안전하게 결제됩니다.</p>
-      <div class="quickpay">
-        <a id="btnKakao" class="btn ghost" target="_blank" rel="noopener">카카오페이 결제 열기</a>
-      </div>
-      <small class="muted">※ 위 버튼은 개인 송금 링크를 엽니다. 링크를 본인 것으로 교체하세요.</small>
-    </div>
-  </div>
-
   <script src="app.js"></script>
 </body>
 </html>
-
