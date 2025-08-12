@@ -10,7 +10,7 @@
   <meta property="og:title" content="HeBeZ Baekho 7 Tee" />
   <meta property="og:description" content="탄탄한 핏과 부드러운 착용감의 시그니처 티셔츠" />
   <meta property="og:image" content="tee-cream.svg" />
-  <meta name="description" content="무통장 입금 + 배송지 폼으로 주문 접수. 토스/카카오페이 송금 링크 지원.">
+  <meta name="description" content="무통장 입금 + 배송지 폼으로 주문 접수. 카카오페이 송금 링크 지원.">
 
   <link rel="stylesheet" href="style.css">
 </head>
@@ -33,7 +33,7 @@
           <img id="hero" src="tee-cream.svg" alt="HeBeZ Tee" style="max-width:92%;height:auto;">
         </div>
         <div class="thumbs">
-          <button class="active" data-img="tee-cream.svg" aria-label="크림 프리뷰">
+          <button class="active" data-img="tee-cream.svg" aria-label="화이트 프리뷰">
             <img src="tee-cream.svg" alt="cream" style="width:100%;height:auto;">
           </button>
           <button data-img="tee-black.svg" aria-label="블랙 프리뷰">
@@ -49,8 +49,8 @@
         <p class="muted">귀여운 백호 7과 원형 레터링이 만난 HeBeZ 시그니처. 원가슴 방패 로고 포인트.</p>
 
         <div class="price">
-          <div class="now" id="priceNow" data-amount="29900">₩29,900</div>
-          <div class="line">₩35,900</div>
+          <div class="now" id="priceNow" data-amount="29900">₩25,000</div>
+          <div class="line">₩35,000</div>
         </div>
 
         <div class="swatches" role="tablist" aria-label="컬러">
@@ -69,10 +69,9 @@
         </div>
 
         <div style="display:flex;gap:10px;margin-top:16px;flex-wrap:wrap">
-          <button id="order" class="btn primary">무통장 입금 주문</button>
+          <button id="pay" class="btn ghost">무통장 입금 주문</button>
           <button id="pay" class="btn ghost"
-            data-toss="https://toss.me/내아이디/29900"
-            data-kakao="https://qr.kakaopay.com/XXXX">카드로 결제(토스/카카오)</button>
+            data-kakao="https://qr.kakaopay.com/FbW0aGBml30d408019">카드로 결제(카카오)</button>
         </div>
 
         <div class="tabs">
@@ -84,9 +83,9 @@
         <div class="section" style="margin-top:12px;">
           <ul>
             <li>원형 레터링 “WE ARE 26” + 백호(등번호 7) / 방패형 HeBeZ 로고(일가슴)</li>
-            <li>컬러: 크림, 블랙</li>
-            <li>원단: 20수 코튼(200gsm) 또는 기능성 폴리(흡습속건)</li>
-            <li>프린팅: DTG or 실크 프린팅</li>
+            <li>컬러: 화이트, 블랙</li>
+            <li>원단: 20수 코튼 또는 기능성 폴리(흡습속건)</li>
+            <li>프린팅: DTG </li>
             <li>핏: 데일리 레귤러</li>
           </ul>
           <p class="kbd">Tip: 썸네일을 클릭하면 미리보기가 바뀝니다.</p>
@@ -114,7 +113,7 @@
           <div>
             <div><strong>은행</strong> NH농협</div>
             <div><strong>예금주</strong> 이영석</div>
-            <div><strong>계좌번호</strong> <span id="acct">301-12-345678</span></div>
+            <div><strong>계좌번호</strong> <span id="acct">352-8512-1593-53</span></div>
             <small class="muted">※ 입금자명은 <b>주문자명</b>과 동일하게 입력해주세요.</small>
           </div>
           <div style="display:flex;gap:8px">
@@ -148,7 +147,7 @@
         <div class="formgrid">
           <label>색상
             <select name="color">
-              <option value="cream">크림</option>
+              <option value="cream">화이트</option>
               <option value="black">블랙</option>
             </select>
           </label>
@@ -191,10 +190,9 @@
     <div class="modal__backdrop" data-close></div>
     <div class="modal__panel" role="dialog" aria-modal="true" aria-labelledby="payTitle">
       <button class="modal__close" data-close aria-label="닫기">×</button>
-      <h2 id="payTitle">카드 결제(토스/카카오)</h2>
+      <h2 id="payTitle">카드 결제(카카오)</h2>
       <p class="muted">휴대폰에 등록된 카드로 각 결제앱에서 안전하게 결제됩니다.</p>
       <div class="quickpay">
-        <a id="btnToss" class="btn primary" target="_blank" rel="noopener">토스 결제 열기</a>
         <a id="btnKakao" class="btn ghost" target="_blank" rel="noopener">카카오페이 결제 열기</a>
       </div>
       <small class="muted">※ 위 버튼은 개인 송금 링크를 엽니다. 링크를 본인 것으로 교체하세요.</small>
