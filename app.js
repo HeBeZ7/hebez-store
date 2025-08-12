@@ -50,13 +50,13 @@ orderBtn?.addEventListener('click', ()=>{
   const size  = document.querySelector('.chips .chip.active')?.textContent || 'M';
   orderForm.elements.color.value = color;
   orderForm.elements.size.value  = size;
-  priceHidden.value = priceNow?.dataset.amount || '29900';
+  priceHidden.value = priceNow?.dataset.amount || '25000';
   openModal(orderModal);
 });
 
 // 계좌/금액 복사
 document.getElementById('copyAcct')?.addEventListener('click', ()=> copyToClipboard(document.getElementById('acct')?.textContent || ''));
-document.getElementById('copyAmt') ?.addEventListener('click', ()=> copyToClipboard(priceNow?.dataset.amount || '29900'));
+document.getElementById('copyAmt') ?.addEventListener('click', ()=> copyToClipboard(priceNow?.dataset.amount || '25000'));
 
 function copyToClipboard(text){
   const t = document.createElement('textarea');
