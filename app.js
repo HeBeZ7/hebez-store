@@ -73,7 +73,7 @@ function showToast(msg){
 }
 
 // ====== 주문 제출 → Formspree 전송 ======
-// ⬇⬇⬇ 여기를 본인 Formspree Endpoint로 바꾸세요 (예: https://formspree.io/f/abcd1234)
+// TODO: REPLACE_HERE — 본인 Formspree Endpoint로 변경 (예: https://formspree.io/f/abcd1234)
 const endpoint = 'https://formspree.io/f/xjkolywq';
 
 orderForm?.addEventListener('submit', async (e)=>{
@@ -92,4 +92,3 @@ orderForm?.addEventListener('submit', async (e)=>{
     showToast('네트워크 오류. 잠시 후 다시 시도해주세요.');
   }
 });
-
