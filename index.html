@@ -30,20 +30,20 @@
       <!-- 좌측: 제품 미리보기 -->
       <section class="card">
         <div class="hero">
-          <!-- 💡 여기는 실제 사진 파일(tee-cream.jpg)이 필요합니다 -->
           <img id="hero" src="tee-cream.jpg" alt="HeBeZ Tee" style="max-width:92%;height:auto;">
         </div>
         <div class="thumbs">
-          <button class="active" data-img="tee-cream.jpg" aria-label="크림 정면">
+          <button class="active" data-img="tee-cream.jpg" aria-label="화이트 정면">
             <img src="tee-cream.jpg" alt="cream" style="width:100%;height:auto;">
           </button>
           <button data-img="tee-black.jpg" aria-label="블랙 정면">
             <img src="tee-black.jpg" alt="black" style="width:100%;height:auto;">
           </button>
-          <!-- 선택: 등판 썸네일 -->
+          <!-- 등판 사진을 올렸다면 주석을 해제하세요
           <button data-img="tee-back-black.jpg" aria-label="블랙 등판">
             <img src="tee-back-black.jpg" alt="back black" style="width:100%;height:auto;">
           </button>
+          -->
         </div>
       </section>
 
@@ -78,7 +78,7 @@
           <button id="order" class="btn primary">무통장 입금 주문</button>
 
           <!-- ✅ 카카오페이: 바로 새 탭으로 열림 -->
-          <!-- ⬇⬇⬇ 여기의 href 값을 본인 송금 링크로 교체 -->
+          <!-- TODO: REPLACE_HERE — 본인 카카오페이 송금 링크로 교체 -->
           <a id="kakaoPayLink" class="btn ghost"
              href="https://qr.kakaopay.com/FbW0aGBml30d408019"
              target="_blank" rel="noopener">
@@ -86,12 +86,22 @@
           </a>
         </div>
 
+        <!-- 보조: 텍스트 링크/QR (버튼이 안 열릴 때 대비) -->
+        <p class="muted" style="margin:6px 0 0">
+          버튼이 안 열리면 👉
+          <a href="https://qr.kakaopay.com/REPLACE_YOUR_LINK" target="_blank" rel="noopener">
+            결제 링크 직접 열기
+          </a>
+        </p>
+        <img alt="KakaoPay QR" style="margin-top:6px;border:1px solid #e5e7eb;border-radius:8px"
+             src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https%3A%2F%2Fqr.kakaopay.com%2FREPLACE_YOUR_LINK">
+
         <div class="section" style="margin-top:12px;">
           <ul>
             <li>원형 레터링 “WE ARE 26” + 백호(등번호 7) / 방패형 HeBeZ 로고(일가슴)</li>
             <li>컬러: 화이트, 블랙</li>
             <li>원단: 20수 또는 기능성 폴리(흡한속건)</li>
-            <li>프린팅: DTG </li>
+            <li>프린팅: DTG</li>
             <li>핏: 데일리 레귤러</li>
           </ul>
           <p class="kbd">Tip: 썸네일을 클릭하면 미리보기가 바뀝니다.</p>
@@ -117,7 +127,7 @@
         <h3>입금 계좌</h3>
         <div class="bank__box">
           <div>
-            <!-- ⬇⬇⬇ 여기 3곳을 본인 정보로 교체 -->
+            <!-- TODO: REPLACE_HERE — 은행/예금주/계좌번호를 본인 정보로 교체 -->
             <div><strong>은행</strong> NH농협</div>
             <div><strong>예금주</strong> 이영석</div>
             <div><strong>계좌번호</strong> <span id="acct">352-8512-1593-53</span></div>
@@ -157,7 +167,7 @@
         <div class="formgrid">
           <label>색상
             <select name="color">
-              <option value="white">화이트</option>
+              <option value="cream">화이트</option>
               <option value="black">블랙</option>
             </select>
           </label>
