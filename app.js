@@ -15,7 +15,7 @@ document.querySelectorAll('.swatches button').forEach(b => {
     document.querySelectorAll('.swatches button').forEach(x => x.classList.remove('active'));
     b.classList.add('active');
     const color = b.dataset.color;
-    hero.src = (color === 'black') ? 'tee-black.jpg' : 'tee-cream.jpg';
+    hero.src = (color === 'black') ? 'tee-black.jpg.png' : 'tee-cream.jpg.png';
     document.querySelectorAll('.thumbs button').forEach(t => {
       t.classList.toggle('active', t.dataset.img === hero.src);
     });
