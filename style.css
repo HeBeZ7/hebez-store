@@ -1,39 +1,46 @@
-/* HeBeZ minimal storefront */
-:root{
-  --ink:#0f172a; --muted:#6b7280; --bg:#faf7ef; --brand:#111827; --accent:#0ea5e9;
-}
-*{box-sizing:border-box}
-html,body{margin:0}
+:root{--ink:#0f172a;--muted:#6b7280;--bg:#faf7ef;--brand:#111827}
+*{box-sizing:border-box}html,body{margin:0}
 body{font-family:Inter,system-ui,-apple-system,'Segoe UI',Roboto,'Apple SD Gothic Neo','Noto Sans KR',sans-serif;color:var(--ink);background:linear-gradient(180deg,#fff,#f6f3ee)}
-a{color:inherit}
+a{color:inherit;text-decoration:none}
 .container{max-width:1100px;margin:0 auto;padding:16px}
 header{position:sticky;top:0;background:rgba(255,255,255,.85);backdrop-filter:blur(6px);border-bottom:1px solid #e5e7eb}
 .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
-.brand{display:flex;align-items:center;gap:10px}
-.brand img{height:28px;width:28px}
+.brand{display:flex;align-items:center;gap:10px}.brand img{height:28px;width:28px}
 .badge{font-size:11px;letter-spacing:.12em;color:var(--muted);text-transform:uppercase}
-h1{font-size:34px;margin:6px 0 2px;font-weight:900}
-p.muted{color:var(--muted);line-height:1.7}
-.grid{display:grid;gap:24px}
-@media(min-width:960px){.grid{grid-template-columns:1fr 1fr}}
+h1{font-size:34px;margin:6px 0 2px;font-weight:900}p.muted{color:var(--muted);line-height:1.7}
+.grid{display:grid;gap:24px}@media(min-width:960px){.grid{grid-template-columns:1fr 1fr}}
 .card{background:#fff;border:1px solid #e5e7eb;border-radius:20px;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,.04)}
 .hero{aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;background:#fff}
 .thumbs{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;padding:10px}
-.thumbs button{border:1px solid #d1d5db;border-radius:12px;overflow:hidden;cursor:pointer}
-.thumbs button.active{border-color:#0f172a}
-.price{display:flex;gap:10px;align-items:baseline;margin:10px 0}
-.price .now{font-size:28px;font-weight:900}
-.price .line{text-decoration:line-through;color:#9ca3af}
-.swatches button{height:44px;width:44px;border:1px solid #d1d5db;border-radius:12px;margin-right:8px;cursor:pointer}
-.swatches button.active{outline:2px solid var(--brand)}
+.thumbs button{border:1px solid #d1d5db;border-radius:12px;overflow:hidden;cursor:pointer;background:#fff}.thumbs button.active{border-color:#0f172a}
+.price{display:flex;gap:10px;align-items:baseline;margin:10px 0}.price .now{font-size:28px;font-weight:900}.price .line{text-decoration:line-through;color:#9ca3af}
+.swatches{margin-top:6px}
+.swatch{height:44px;width:44px;border:1px solid #d1d5db;border-radius:12px;margin-right:8px;cursor:pointer}
+.swatch.active{outline:2px solid var(--brand)}
+.swatch--cream{background:#faf5e7}
+.swatch--black{background:#111827}
+.chips{display:flex;flex-wrap:wrap}
 .chips .chip{display:inline-block;border:1px solid #d1d5db;border-radius:12px;padding:8px 12px;margin:4px;font-weight:700;cursor:pointer}
 .chips .chip.active{background:var(--brand);color:#fff;border-color:var(--brand)}
-.btn{height:48px;border-radius:14px;border:none;font-weight:800;cursor:pointer;padding:0 18px}
-.btn.primary{background:var(--brand);color:#fff}
-.btn.ghost{background:#fff;border:1px solid var(--brand)}
+.btn{height:48px;border-radius:14px;border:1px solid transparent;font-weight:800;cursor:pointer;padding:0 18px;display:inline-flex;align-items:center;justify-content:center}
+.btn.primary{background:#111827;color:#fff}
+.btn.ghost{background:#fff;border:1px solid #111827}
 .footer{border-top:1px solid #e5e7eb;margin-top:40px;padding:24px 0;color:var(--muted);font-size:14px}
-.tabs{display:flex;gap:8px;margin-top:20px}
-.tab{border:1px solid #d1d5db;border-radius:12px;padding:8px 12px;font-weight:700;cursor:pointer}
-.tab.active{background:#f9fafb}
-.section{line-height:1.8;color:#374151}
-.kbd{border:1px solid #cbd5e1;border-radius:6px;padding:2px 6px;background:#f8fafc;font-size:12px}
+.tabs{display:flex;gap:8px;margin-top:20px}.tab{border:1px solid #d1d5db;border-radius:12px;padding:8px 12px;font-weight:700;cursor:pointer}.tab.active{background:#f9fafb}
+.section{line-height:1.8;color:#374151}.kbd{border:1px solid #cbd5e1;border-radius:6px;padding:2px 6px;background:#f8fafc;font-size:12px}
+
+/* modal */
+.modal{position:fixed;inset:0;display:none;z-index:50}
+.modal.show{display:block}
+.modal__backdrop{position:absolute;inset:0;background:rgba(0,0,0,.38)}
+.modal__panel{position:relative;margin:6vh auto 0;max-width:720px;background:#fff;border:1px solid #e5e7eb;border-radius:20px;box-shadow:0 20px 60px rgba(0,0,0,.15);padding:18px}
+.modal__close{position:absolute;right:10px;top:10px;background:#fff;border:1px solid #e5e7eb;border-radius:10px;height:36px;width:36px;cursor:pointer}
+.formgrid{display:grid;gap:12px;grid-template-columns:1fr 1fr}
+.formgrid label{display:flex;flex-direction:column;font-size:14px;gap:6px}
+.formgrid input,.formgrid select{height:42px;padding:0 10px;border:1px solid #d1d5db;border-radius:10px}
+@media(max-width:640px){.formgrid{grid-template-columns:1fr}}
+.bank{margin:10px 0 16px}
+.bank__box{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;border:1px solid #e5e7eb;border-radius:14px;padding:12px}
+.actions{display:flex;gap:10px;margin-top:12px}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:#111827;color:#fff;padding:10px 14px;border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,.2)}
+.quickpay{display:flex;gap:10px;margin-top:12px;flex-wrap:wrap}
