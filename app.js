@@ -80,7 +80,7 @@ orderForm?.addEventListener('submit', async (e)=>{
   const data = new FormData(orderForm);
 
   // ★★★ 여기 본인 Formspree 엔드포인트로 교체 ★★★
-  const endpoint = 'https://formspree.io/f/FORM_ENDPOINT_HERE';
+  const endpoint = 'https://formspree.io/f/https://formspree.io/f/xjkolywq;
 
   try{
     const r = await fetch(endpoint, { method:'POST', body:data, headers:{ 'Accept':'application/json' }});
