@@ -11,7 +11,7 @@ h1{font-size:34px;margin:6px 0 2px;font-weight:900}p.muted{color:var(--muted);li
 .grid{display:grid;gap:24px}@media(min-width:960px){.grid{grid-template-columns:1fr 1fr}}
 .card{background:#fff;border:1px solid #e5e7eb;border-radius:20px;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,.04)}
 .hero{aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;background:#fff}
-.thumbs{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;padding:10px}
+.thumbs{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;padding:10px}
 .thumbs button{border:1px solid #d1d5db;border-radius:12px;overflow:hidden;cursor:pointer;background:#fff}.thumbs button.active{border-color:#0f172a}
 .price{display:flex;gap:10px;align-items:baseline;margin:10px 0}.price .now{font-size:28px;font-weight:900}.price .line{text-decoration:line-through;color:#9ca3af}
 .swatches{margin-top:6px}
@@ -42,4 +42,3 @@ h1{font-size:34px;margin:6px 0 2px;font-weight:900}p.muted{color:var(--muted);li
 .bank__box{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;border:1px solid #e5e7eb;border-radius:14px;padding:12px}
 .actions{display:flex;gap:10px;margin-top:12px}
 .toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:#111827;color:#fff;padding:10px 14px;border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,.2)}
-
