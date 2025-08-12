@@ -25,8 +25,7 @@ h1{font-size:34px;margin:6px 0 2px;font-weight:900}p.muted{color:var(--muted);li
 .btn{height:48px;border-radius:14px;border:1px solid transparent;font-weight:800;cursor:pointer;padding:0 18px;display:inline-flex;align-items:center;justify-content:center}
 .btn.primary{background:#111827;color:#fff}
 .btn.ghost{background:#fff;border:1px solid #111827}
-.footer{border-top:1px solid #e5e7eb;margin-top:40px;padding:24px 0;color:var(--muted);font-size:14px}
-.tabs{display:flex;gap:8px;margin-top:20px}.tab{border:1px solid #d1d5db;border-radius:12px;padding:8px 12px;font-weight:700;cursor:pointer}.tab.active{background:#f9fafb}
+.footer{border-top:1px solid #e5e7eb;margin-top:40px;padding:24px 0;color:#6b7280;font-size:14px}
 .section{line-height:1.8;color:#374151}.kbd{border:1px solid #cbd5e1;border-radius:6px;padding:2px 6px;background:#f8fafc;font-size:12px}
 
 /* modal */
@@ -43,4 +42,4 @@ h1{font-size:34px;margin:6px 0 2px;font-weight:900}p.muted{color:var(--muted);li
 .bank__box{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;border:1px solid #e5e7eb;border-radius:14px;padding:12px}
 .actions{display:flex;gap:10px;margin-top:12px}
 .toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:#111827;color:#fff;padding:10px 14px;border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,.2)}
-.quickpay{display:flex;gap:10px;margin-top:12px;flex-wrap:wrap}
+
