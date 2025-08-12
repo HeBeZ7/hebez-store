@@ -1,113 +1,207 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>HeBeZ | Baekho 7 – WE ARE 26</title>
-  <meta name="description" content="귀여운 백호 7과 WE ARE 26 레터링. 크림/블랙, 20수 코튼/기능성 폴리 선택. 5만원 이상 무료배송.">
-  <meta property="og:title" content="HeBeZ Baekho 7 – WE ARE 26">
-  <meta property="og:description" content="응원 무드를 일상으로. 크림/블랙 2컬러, 20수/기능성 선택.">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="assets/tee-cream.svg">
-  <link rel="icon" href="assets/hebez-shield.svg">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HeBeZ 스토어 | Baekho 7 Tee</title>
+
+  <!-- Favicon & 공유 썸네일 -->
+  <link rel="icon" href="hebez-shield.svg">
+  <meta property="og:title" content="HeBeZ Baekho 7 Tee" />
+  <meta property="og:description" content="탄탄한 핏과 부드러운 착용감의 시그니처 티셔츠" />
+  <meta property="og:image" content="tee-cream.svg" />
+  <meta name="description" content="무통장 입금 + 배송지 폼으로 주문 접수. 토스/카카오페이 송금 링크 지원.">
+
   <link rel="stylesheet" href="style.css">
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Product",
-    "name":"HeBeZ Baekho 7 Tee – WE ARE 26",
-    "brand":{"@type":"Brand","name":"HeBeZ"},
-    "description":"백호 7 그래픽, 방패 로고, 크림/블랙 컬러.",
-    "image":["assets/tee-cream.svg","assets/tee-black.svg"],
-    "offers":{
-      "@type":"Offer",
-      "priceCurrency":"KRW",
-      "price":"29900",
-      "availability":"https://schema.org/InStock",
-      "url":"https://smartstore.naver.com/REPLACE_PRODUCT_URL"
-    }
-  }
-  </script>
 </head>
 <body>
-<header>
-  <div class="container nav">
-    <div class="brand">
-      <img src="assets/hebez-shield.svg" alt="HeBeZ">
-      <strong>HeBeZ</strong>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="./">
+        <img src="hebez-shield.svg" alt="HeBeZ">
+        <strong>HeBeZ</strong>
+      </a>
+      <span class="badge">HEBEZ HERITAGE</span>
     </div>
-    <div class="badge">HeBeZ Heritage</div>
-    <a class="badge" href="policy.html">교환/환불</a>
+  </header>
+
+  <main class="container">
+    <div class="grid">
+      <!-- 좌측: 제품 미리보기 -->
+      <section class="card">
+        <div class="hero">
+          <img id="hero" src="tee-cream.svg" alt="HeBeZ Tee" style="max-width:92%;height:auto;">
+        </div>
+        <div class="thumbs">
+          <button class="active" data-img="tee-cream.svg" aria-label="크림 프리뷰">
+            <img src="tee-cream.svg" alt="cream" style="width:100%;height:auto;">
+          </button>
+          <button data-img="tee-black.svg" aria-label="블랙 프리뷰">
+            <img src="tee-black.svg" alt="black" style="width:100%;height:auto;">
+          </button>
+        </div>
+      </section>
+
+      <!-- 우측: 정보/구매 -->
+      <section class="card" style="padding:18px 18px 22px;">
+        <div class="badge">NEW</div>
+        <h1>Baekho 7 – “WE ARE 26” Tee</h1>
+        <p class="muted">귀여운 백호 7과 원형 레터링이 만난 HeBeZ 시그니처. 원가슴 방패 로고 포인트.</p>
+
+        <div class="price">
+          <div class="now" id="priceNow" data-amount="29900">₩29,900</div>
+          <div class="line">₩35,900</div>
+        </div>
+
+        <div class="swatches" role="tablist" aria-label="컬러">
+          <button class="active swatch swatch--cream" data-color="cream" title="크림" aria-selected="true"></button>
+          <button class="swatch swatch--black" data-color="black" title="블랙" aria-selected="false"></button>
+        </div>
+
+        <div class="chips" style="margin-top:8px;" aria-label="사이즈 선택">
+          <span class="chip">S</span>
+          <span class="chip">M</span>
+          <span class="chip">L</span>
+          <span class="chip">XL</span>
+          <span class="chip active">XXL</span>
+          <span class="chip">3XL</span>
+          <span class="chip">4XL</span>
+        </div>
+
+        <div style="display:flex;gap:10px;margin-top:16px;flex-wrap:wrap">
+          <button id="order" class="btn primary">무통장 입금 주문</button>
+          <button id="pay" class="btn ghost"
+            data-toss="https://toss.me/내아이디/29900"
+            data-kakao="https://qr.kakaopay.com/XXXX">카드로 결제(토스/카카오)</button>
+        </div>
+
+        <div class="tabs">
+          <div class="tab active">상세</div>
+          <div class="tab">세탁/소재</div>
+          <div class="tab">교환/환불</div>
+        </div>
+
+        <div class="section" style="margin-top:12px;">
+          <ul>
+            <li>원형 레터링 “WE ARE 26” + 백호(등번호 7) / 방패형 HeBeZ 로고(일가슴)</li>
+            <li>컬러: 크림, 블랙</li>
+            <li>원단: 20수 코튼(200gsm) 또는 기능성 폴리(흡습속건)</li>
+            <li>프린팅: DTG or 실크 프린팅</li>
+            <li>핏: 데일리 레귤러</li>
+          </ul>
+          <p class="kbd">Tip: 썸네일을 클릭하면 미리보기가 바뀝니다.</p>
+        </div>
+      </section>
+    </div>
+
+    <footer class="footer">
+      <div class="container">
+        © HeBeZ — All rights reserved.
+      </div>
+    </footer>
+  </main>
+
+  <!-- 주문(무통장) 모달 -->
+  <div id="orderModal" class="modal" aria-hidden="true">
+    <div class="modal__backdrop" data-close></div>
+    <div class="modal__panel" role="dialog" aria-modal="true" aria-labelledby="orderTitle">
+      <button class="modal__close" data-close aria-label="닫기">×</button>
+      <h2 id="orderTitle">무통장 입금 주문</h2>
+
+      <section class="bank">
+        <h3>입금 계좌</h3>
+        <div class="bank__box">
+          <div>
+            <div><strong>은행</strong> NH농협</div>
+            <div><strong>예금주</strong> 이영석</div>
+            <div><strong>계좌번호</strong> <span id="acct">301-12-345678</span></div>
+            <small class="muted">※ 입금자명은 <b>주문자명</b>과 동일하게 입력해주세요.</small>
+          </div>
+          <div style="display:flex;gap:8px">
+            <button id="copyAcct" class="btn ghost" type="button">계좌 복사</button>
+            <button id="copyAmt" class="btn ghost" type="button">금액 복사</button>
+          </div>
+        </div>
+      </section>
+
+      <form id="orderForm" autocomplete="shipping">
+        <h3>배송지 정보</h3>
+        <div class="formgrid">
+          <label>주문자명
+            <input name="name" required placeholder="홍길동">
+          </label>
+          <label>연락처
+            <input name="phone" required inputmode="tel" placeholder="010-0000-0000">
+          </label>
+          <label>우편번호
+            <input name="postcode" placeholder="12345">
+          </label>
+          <label>주소
+            <input name="address1" required placeholder="도로명 주소">
+          </label>
+          <label>상세주소
+            <input name="address2" placeholder="동/호수">
+          </label>
+        </div>
+
+        <h3>주문 정보</h3>
+        <div class="formgrid">
+          <label>색상
+            <select name="color">
+              <option value="cream">크림</option>
+              <option value="black">블랙</option>
+            </select>
+          </label>
+          <label>사이즈
+            <select name="size">
+              <option>S</option><option>M</option><option>L</option>
+              <option>XL</option><option>XXL</option><option>3XL</option><option>4XL</option>
+            </select>
+          </label>
+          <label>수량
+            <input name="qty" type="number" min="1" value="1" required>
+          </label>
+          <label>요청사항
+            <input name="note" placeholder="메모가 있으면 남겨주세요">
+          </label>
+        </div>
+
+        <div class="info">
+          <p class="muted">• 폼 제출 후 <b>24시간 이내 입금</b> 부탁드립니다. 입금 확인 후 발송됩니다.<br>
+          • 제출 정보는 주문 처리 외 목적으로 사용하지 않습니다.</p>
+        </div>
+
+        <div class="actions">
+          <button type="submit" class="btn primary">주문 접수</button>
+          <button type="button" class="btn" data-close>닫기</button>
+        </div>
+
+        <!-- 전송용 메타 -->
+        <input type="hidden" name="product" value="Baekho 7 Tee">
+        <input type="hidden" name="page" value="hebez-store">
+        <input type="hidden" name="price" id="priceHidden" value="29900">
+      </form>
+
+      <div id="orderToast" class="toast" role="status" aria-live="polite" hidden></div>
+    </div>
   </div>
-</header>
 
-<main class="container" style="padding:24px 16px 40px">
-  <div class="grid">
-    <section class="card">
-      <div class="hero"><img id="hero" src="assets/tee-cream.svg" alt="HeBeZ Tee" style="max-height:100%;max-width:100%"></div>
-      <div class="thumbs">
-        <button class="active" data-img="assets/tee-cream.svg"><img src="assets/tee-cream.svg" alt="cream"></button>
-        <button data-img="assets/tee-black.svg"><img src="assets/tee-black.svg" alt="black"></button>
+  <!-- 카드 결제(송금 링크) 모달 -->
+  <div id="payModal" class="modal" aria-hidden="true">
+    <div class="modal__backdrop" data-close></div>
+    <div class="modal__panel" role="dialog" aria-modal="true" aria-labelledby="payTitle">
+      <button class="modal__close" data-close aria-label="닫기">×</button>
+      <h2 id="payTitle">카드 결제(토스/카카오)</h2>
+      <p class="muted">휴대폰에 등록된 카드로 각 결제앱에서 안전하게 결제됩니다.</p>
+      <div class="quickpay">
+        <a id="btnToss" class="btn primary" target="_blank" rel="noopener">토스 결제 열기</a>
+        <a id="btnKakao" class="btn ghost" target="_blank" rel="noopener">카카오페이 결제 열기</a>
       </div>
-    </section>
-
-    <section>
-      <div class="badge">NEW</div>
-      <h1>Baekho 7 – “WE ARE 26” Tee</h1>
-      <p class="muted">귀여운 <strong>백호 7</strong>과 원형 레터링이 만난 HeBeZ 시그니처. 왼가슴 <strong>방패 로고</strong>로 포인트를 완성하세요.</p>
-
-      <div class="price">
-        <div class="now">29,900원</div>
-        <div class="line">35,900원</div>
-        <span style="color:#059669;font-weight:700;font-size:13px">런칭 특가</span>
-      </div>
-
-      <h4>컬러</h4>
-      <div class="swatches">
-        <button class="active" data-color="cream" style="background:#faf7ef"></button>
-        <button data-color="black" style="background:#0b0b0b"></button>
-      </div>
-
-      <h4>원단</h4>
-      <div class="chips">
-        <span class="chip active">20수 코튼</span>
-        <span class="chip">기능성 폴리</span>
-      </div>
-
-      <h4>사이즈</h4>
-      <div class="chips">
-        <span class="chip active">M</span><span class="chip">L</span><span class="chip">XL</span><span class="chip">XXL</span>
-      </div>
-
-      <div style="display:flex;gap:10px;margin-top:14px">
-        <button id="buy" class="btn primary" data-url="https://smartstore.naver.com/REPLACE_PRODUCT_URL">스마트스토어에서 구매</button>
-        <a class="btn ghost" href="policy.html">배송/교환 안내</a>
-      </div>
-
-      <div class="tabs">
-        <div class="tab active" data-tab="details">상세</div>
-        <div class="tab" data-tab="wash">세탁/소재</div>
-        <div class="tab" data-tab="policy">교환/환불</div>
-      </div>
-      <div id="tab-content" class="section" style="margin-top:10px">
-        • 원형 레터링 “WE ARE 26” + 백호(등번호 7) / 방패형 HeBeZ 로고(왼가슴)<br>
-        • 컬러: 크림, 블랙<br>
-        • 원단: 20수 코튼(200gsm) 또는 기능성 폴리(흡습속건)<br>
-        • 프린팅: 디지털 프린팅 (DTG/전사)<br>
-        • 핏: 레귤러/데일리
-      </div>
-      <p class="muted" style="margin-top:12px">* 상징물/공식 마크는 사용하지 않습니다.</p>
-    </section>
+      <small class="muted">※ 위 버튼은 개인 송금 링크를 엽니다. 링크를 본인 것으로 교체하세요.</small>
+    </div>
   </div>
-</main>
 
-<footer class="footer">
-  <div class="container" style="display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap">
-    <div class="brand"><img src="assets/hebez-shield.svg" alt="HeBeZ"><strong>HeBeZ</strong></div>
-    <div>© 2025 HeBeZ — 국내 제작 · 우체국 배송</div>
-  </div>
-</footer>
-
-<script src="app.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
+
